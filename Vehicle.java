@@ -1,15 +1,15 @@
-public class Vehicle {
+public abstract class Vehicle {
 
     private String plateNum;
     private String manufacturer;
-    private int x1, y1, x2, y2;
+    private double x1, y1, x2, y2;
     private double fuelFor100km;
 
     public Vehicle(){
 
     }
 
-    public Vehicle(String plateNum, String manufacturer, int x1, int y1, int x2, int y2){
+    public Vehicle(String plateNum, String manufacturer, double x1, double y1, double x2, double y2){
         this.plateNum = plateNum;
         this.manufacturer = manufacturer;
         this.x1 = x1;
@@ -23,10 +23,10 @@ public class Vehicle {
     }
 
     public double findRequiredFuel(){
-        return getFuelFor100km() * findDistance();
+        return getFuelFor100km() * findDistance() / 100;
     }
 
-    public void describe(){}
+    public abstract void describe();
 
 
     //setter method
@@ -38,19 +38,19 @@ public class Vehicle {
         this.manufacturer = manufacturer;
     }
 
-    public void setX1(int x1){
+    public void setX1(double x1){
         this.x1 = x1;
     }
 
-    public void setY1(int y1){
+    public void setY1(double y1){
         this.y1 = y1;
     }
 
-    public void setX2(int x2){
+    public void setX2(double x2){
         this.x2 = x2;
     }
 
-    public void setY2(int y2){
+    public void setY2(double y2){
         this.y2 = y2;
     }
 
@@ -68,19 +68,19 @@ public class Vehicle {
         return this.manufacturer;
     }
 
-    public int getX1(){
+    public double getX1(){
         return this.x1;
     }
 
-    public int getY1(){
+    public double getY1(){
         return this.y1;
     }
 
-    public int getX2(){
+    public double getX2(){
         return this.x2;
     }
 
-    public int getY2(){
+    public double getY2(){
         return this.y2;
     }
 
